@@ -3,12 +3,22 @@ const weatherSiteURL = "https://api.openweathermap.org";
 
 
 //search bar//
-let searchInput = $("#search-input");
+let searchInput = $("#search-input")
 let searchForm = $("#search-form");
 
 
 function fetchLocation(search) {
-    let queryURL = weatherSiteURL + "/data/3.0/onecall/day_summary?lat=" + lat + "&lon=" + lon + "&date=" + date + "&appid=" + APIKey
+    let queryURL = `${weatherSiteURL}/geo/1.0/direct?q=${search}&limit=5&appid=${APIKey}`
+
+    // "/data/3.0/onecall/day_summary?lat=" + lat + "&lon=" + lon + "&date=" + date + "&appid=" + APIKey
+
+    fetch(queryURL)
+    .then(function (data) {
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response);
+    })
 }
 
 function submitSearchForm(event) {
@@ -21,8 +31,8 @@ function submitSearchForm(event) {
 
 //
 
-let lat = ();
-let lon = ();
+// let lat = ();
+// let lon = ();
 let date1 = dayjs().format("DD MM YY");
 
 //search history//
