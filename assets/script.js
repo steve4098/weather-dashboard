@@ -10,6 +10,8 @@ function submitSearchForm(event) {
     event.preventDefault();
 
     let search = searchInput.val().trim();
+
+    fetchWeather(search);
 }
 
 //
