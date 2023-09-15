@@ -6,14 +6,15 @@ let queryURL = "https://api.openweathermap.org/data/3.0/onecall/day_summary?lat=
 let searchInput = $("#search-input");
 let searchForm = $("#search-form");
 
-//search history//
-let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-
 let lat = ();
 let lon = ();
 let date = ();
 
+//search history//
+let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+
 //function to create saved search list local storage//
+
 function renderButtons() {
     $("#history").empty();
 
