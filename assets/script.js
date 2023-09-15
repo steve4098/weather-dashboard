@@ -9,7 +9,7 @@ let searchInput = $("#search-input");
 let searchForm = $("#search-form");
 
 
-function fetchWeather() {
+function fetchLocation() {
     
 }
 
@@ -18,7 +18,7 @@ function submitSearchForm(event) {
 
     let search = searchInput.val().trim();
 
-    fetchWeather(search);
+    fetchLocation(search);
 }
 
 //
