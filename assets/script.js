@@ -9,9 +9,17 @@ let lat = ();
 let lon = ();
 let date = ();
 
-//function to create saved search list//
-
+//function to create saved search list local storage//
 function renderButtons() {
     $("#history").empty();
+
+    for (let i=0; i<searchHistory.length; i++){
+        let historyBtn = $("<button>");
+        historyBtn.addClass("previousSearch");
+        historyBtn.attr(searchHistory[i]);
+        $(".list-group").append(historyBtn);
+
+        // $("#history").append(`<button class="list-group-item" id="${i}">${searchHistory[i]}</button>`);
+    }
 
 }
