@@ -19,6 +19,14 @@ function fetchLocation(search) {
         if(!response[0]){
             alert("No location found")
         } else {
+
+            searchHistory.push(search)
+
+            localStorage.setItem("search-history", JSON.stringify(searchHistory));
+
+            searchHistoryContainer.html("");
+
+
             let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
             $("#history").empty();
