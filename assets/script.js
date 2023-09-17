@@ -3,8 +3,10 @@ const weatherSiteURL = "https://api.openweathermap.org";
 
 
 //search bar//
-let searchInput = $("#search-input")
+
+// let searchIn = $(".form-input");
 let searchForm = $("#search-form");
+let searchInput = $("#search-input");
 
 
 function fetchLocation(search) {
