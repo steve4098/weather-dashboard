@@ -3,22 +3,22 @@ const weatherSiteURL = "https://api.openweathermap.org";
 
 
 //search bar//
-
-// let searchIn = $(".form-input");
 let searchForm = $("#search-form");
 let searchInput = $("#search-input");
 
 
 function fetchLocation(search) {
-    let queryURL = `${weatherSiteURL}/geo/1.0/direct?q=${search}&limit=5&appid=${APIKey}`
+    let queryURL = `${weatherSiteURL}/geo/1.0/direct?q=${search}&limit=5&appid=${APIKey}`;
+    console.log(queryURL);
 
     // "/data/3.0/onecall/day_summary?lat=" + lat + "&lon=" + lon + "&date=" + date + "&appid=" + APIKey
 
-    fetch(queryURL)
-    .then(function (data) {
-      return response.json();
-    })
-    .then(function (response) {
+    fetch(queryURL).then(function (data) {
+      return data.json();
+    }).then(function (response) {
+        if(!response[0]){
+            alert("No location found")
+        }
       console.log(response);
     })
 }
@@ -35,23 +35,23 @@ function submitSearchForm(event) {
 
 // let lat = ();
 // let lon = ();
-let date1 = dayjs().format("DD MM YY");
+// let date1 = dayjs().format("DD MM YY");
 
 //search history//
-let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+// let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 //function to create saved search list local storage//
 
-function renderButtons() {
-    $("#history").empty();
+// function renderButtons() {
+    // $("#history").empty();
 
-    for (let i=0; i<searchHistory.length; i++){
-        let historyBtn = $("<button>");
-        historyBtn.addClass("previousSearch");
-        historyBtn.attr(searchHistory[i]);
-        $(".list-group").append(historyBtn);
+    // for (let i=0; i<searchHistory.length; i++){
+    //     let historyBtn = $("<button>");
+    //     // historyBtn.addClass("previousSearch");
+    //     historyBtn.attr(searchHistory[i]);
+    //     $(".list-group").append(historyBtn);
 
         // $("#history").append(`<button class="list-group-item" id="${i}">${searchHistory[i]}</button>`);
-    }
+    // }
 
-}
+// }
