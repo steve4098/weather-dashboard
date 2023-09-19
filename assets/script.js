@@ -43,15 +43,16 @@ function fetchLocation(search) {
         }
       console.log(response);
     })
-}
+};
 
 function submitSearchForm(event) {
     event.preventDefault();
+    alert("clicked");
 
     let search = searchInput.val().trim();
 
     fetchLocation(search);
-}
+};
 
 //
 
